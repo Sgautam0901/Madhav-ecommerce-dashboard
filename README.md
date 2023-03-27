@@ -1,123 +1,62 @@
-# Service Now Power BI Template
-  
-This Power BI template is used for loading Service Now records from the task table using Rest API. I used [Alberto Colombo's blog post](https://blog.kofko.xyz/connect-servicenow-and-powerbi) as a reference to create this template.
+AdventureWorks Analytics - OLTP
+Overview
+AdventureWorks is a fictional bicycle manufacturing company created by Microsoft, this database contains standard transactions data from an Enterprise Resource Planning System. It contains data from the following scenarios of the company: Human Resources, Product Management, Manufacturing, Purchasing, Inventory, Sales, and Admin. This analysis makes a brief summary of the following areas: HHRR, Person, Production, Sales and Purchasing. Microsoft Power BI has been used to create an interactive dashboard while pulling data from SQL Server.
 
-<h1 align="left">
-  <img src="ReadMe/screenshot.PNG" />
-</h1>
+Data Source
+OLTP: On-Line Transaction Processing. -> fictional bicycle manufacturing company created by Microsoft.
 
+Data Source
 
-## References:
-* https://developer.servicenow.com/dev.do#!/reference/api/orlando/rest/c_TableAPI
-* https://docs.servicenow.com/bundle/kingston-platform-user-interface/page/use/common-ui-elements/reference/r_OpAvailableFiltersQueries.html
+SQL Database Diagrams
+HHRR-Diagram
 
+Person-Diagram
 
-## Dependencies
-<br>
-  
-|Software                                   |Dependency                 |
-|:------------------------------------------|:--------------------------|
-|[Power BI Desktop](https://powerbi.microsoft.com/en-us/downloads/)|Template|
-|[Power BI Desktop](https://community.powerbi.com/t5/Themes-Gallery/University-of-Melbourne/td-p/163417)|Theme|
-<br>
+Production-Diagram
 
-## Glossary of Terms
-<br>
-  
-| Term                      | Meaning                                                                                  |
-|:--------------------------|:-----------------------------------------------------------------------------------------|
-| Rest API       |A REST API (also known as RESTful API) is an application programming interface (API or web API) that conforms to the constraints of REST architectural style and allows for interaction with RESTful web services. REST stands for representational state transfer and was created by computer scientist Roy Fielding.|
-| Service Now   |A ticketing tool that processes and catalogs customer service requests. You can raise requests that deal with incidents, changes, problems, and other services.|
+Sales-Diagram
 
-<br>
+Purchasing-Diagram
 
+Data Model
+Model
 
-## Functionality 
-This template requires the user to enter parameters as per the following screen.
+Report and presentation
+Advertisement: Export caused changes to visualizations.
 
-<h1 align="left">
-  <img src="ReadMe/template_parameters.PNG" />
-</h1>
+Power BI Dashboard
 
-* servicenow_url = https://YOUR_COMPANY_NAME.service-now.com/
-* assignment_group = Only one assignment group e.g. "Service Desk"
-* number_of_months = Start small, it depends on how many records are returned. I find 6 months works for me to return about 6,000 records without a connection failure.
-* closed_date_offset = Used to offset the closed date updated by the system so it better reflects when the status is updated to a completed/closed status. I find 3 works well.
+Built With
+•Power BI •SQL Server
 
-<br>
+About
+SQL & Power BI. Diagrams, select/view, Power Query, DAX, etc.
 
-The first connection will require some credentials: you can use your local ServiceNow credentials or a service account
-
-<h1 align="left">
-  <img src="ReadMe/credentials.PNG" />
-</h1>
-
-<br>
-  
-## Rest API call examples
-
-### Number of months:
-
-```
-= Json.Document(Web.Contents(servicenow_url & "/api/now/table/task?
-sysparm_display_value=true
-&sysparm_query=sys_class_nameINsc_req_item,incident
-^sys_created_onONLast%20" & number_of_months & "%20months
-%40javascript%3Ags.beginningOfLast" & number_of_months & "Months()
-%40javascript%3Ags.endOfLast" & number_of_months & "Months()
-&assignment_group=" & assignment_group & "
-&numberISNOTEMPTY
-&sysparm_exclude_reference_link=true
-&sysparm_fields=sys_id
-%2Cactive
-%2Capproval_set
-%2Cclosed_at
-%2Cdue_date
-%2Cnumber
-%2Copened_at
-%2Cshort_description
-%2Csla_due
-%2Csys_class_name
-%2Csys_created_on
-%2Csys_updated_on
-%2Cu_service_area
-%2Curgency
-%2Cassignment_group
-%2Cu_requestor
-%2Cassigned_to
-%2Cstate
-%2Cu_affected_user"))
-```
-
-### Between 2 dates:
-
-```
-= Json.Document(Web.Contents(servicenow_url & "/api/now/table/task?
-sysparm_display_value=true
-&sysparm_query=sys_class_nameINsc_req_item,incident
-^sys_created_onBETWEEN
-javascript:gs.dateGenerate('" & Date.ToText(start_date, "yyyy-MM-dd") & "','00:00:00')@
-javascript:gs.dateGenerate('" & Date.ToText(end_date, "yyyy-MM-dd") & "','00:00:00')
-&assignment_group=" & assignment_group & "
-&numberISNOTEMPTY
-&sysparm_exclude_reference_link=true
-&sysparm_fields=sys_id
-%2Cactive
-%2Capproval_set
-%2Cclosed_at
-%2Cdue_date
-%2Cnumber
-%2Copened_at
-%2Cshort_description
-%2Csla_due
-%2Csys_class_name
-%2Csys_created_on
-%2Csys_updated_on
-%2Cu_service_area
-%2Curgency
-%2Cassignment_group
-%2Cu_requestor
-%2Cassigned_to
-%2Cstate
-%2Cu_affected_user"))
-```
+Topics
+sql-server diagram power-bi diagrams dax sqlserver powerbi adventure-works powerquery adventureworks power-bi-dax power-bi-dashboard dashbor
+Resources
+ Readme
+Stars
+ 0 stars
+Watchers
+ 1 watching
+Forks
+ 0 forks
+Releases
+No releases published
+Packages
+No packages published
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
