@@ -1,5 +1,5 @@
 # Project- Interactive Dashboard using PowerBI
-![Screenshot (4)](https://user-images.githubusercontent.com/108050278/227970690-7ad093e9-6c49-4412-ab48-0470aa979f63.png)
+[screen-capture (3).webm](https://user-images.githubusercontent.com/108050278/228032507-4631e44e-3a0d-48be-9e2a-55d57f43c21c.webm)
 ## Overview
 The above interactive dashboard was created with the help of Power BI. It was created by combining two different tables together. Various bar charts and Pie charts were made to show relations between various columns in the tables. The dashboard helped understand various insights of the data and helped Madhav Stores increase their production and grow their business accordingly. The visualizations made the complex data easy to understand.
 ## Data Model 
