@@ -1,5 +1,6 @@
 # Project- Interactive Dashboard using PowerBI
-[screen-capture (7).webm](https://user-images.githubusercontent.com/108050278/228041363-65185ba9-85ad-4888-ad08-84c7cffaeb73.webm)
+[screen-capture (5).webm](https://user-images.githubusercontent.com/108050278/228532367-71a04b4f-5d18-4007-9021-3eda77d10b55.webm)
+
 ## Overview
 
 The above interactive dashboard was created with the help of Power BI. It was created by combining two different tables together. Various bar charts and Pie charts were made to show relations between various columns in the tables. The dashboard helped understand various insights of the data and helped Gautam Stores increase their production and grow their business accordingly. The visualizations made the complex data easy to understand.
